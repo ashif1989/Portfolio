@@ -39,7 +39,11 @@ const Experience = () => {
       ) : (
         status && (
           <>
-            <ListItems items={experience} deleteItems={handleDeleteItems} />
+            <ListItems
+              items={experience}
+              deleteItems={handleDeleteItems}
+              flag={"experience"}
+            />
             <div>{status}</div>
           </>
         )

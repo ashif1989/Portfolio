@@ -37,11 +37,15 @@ const Skills = () => {
     <div>
       <h1>Skills </h1>
       {loading ? (
-        <div>Experience Details loading....</div>
+        <div>Skills Details loading....</div>
       ) : (
         status && (
           <>
-            <ListItems items={skills} deleteItems={handleDeleteItems} />
+            <ListItems
+              items={skills}
+              deleteItems={handleDeleteItems}
+              flag={"skills"}
+            />
             <div>{status}</div>
           </>
         )
