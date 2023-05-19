@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ListItems from "./ListItems";
+import useFetch from "./useFetch";
 
 const Skills = () => {
   const [skills, setSkills] = useState([
@@ -7,7 +8,7 @@ const Skills = () => {
       info1: "React",
       info2: "Intermediate",
       info3: "Experience: 4 years",
-      id: 1
+      id: 1,
     },
     { info1: "HTML", info2: "Expert", info3: "Experience: 5 years", id: 2 },
     { info1: "CSS", info2: "Expert", info3: "Experience: 5 years", id: 3 },
@@ -15,15 +16,17 @@ const Skills = () => {
       info1: "Redux",
       info2: "Intermediate",
       info3: "Experience: 4 years",
-      id: 4
+      id: 4,
     },
     {
       info1: "Javascript",
       info2: "Expert",
       info3: "Experience: 5 years",
-      id: 5
-    }
+      id: 5,
+    },
   ]);
+
+  const { status, error, loading } = useFetch("https://randomuser.me/api/");
 
   const handleDeleteItems = (id) => {
     const newSkl = skills.filter((skill) => skill.id !== id);
@@ -33,7 +36,17 @@ const Skills = () => {
   return (
     <div>
       <h1>Skills </h1>
-      <ListItems items={skills} deleteItems={handleDeleteItems} />
+      {loading ? (
+        <div>Experience Details loading....</div>
+      ) : (
+        status && (
+          <>
+            <ListItems items={skills} deleteItems={handleDeleteItems} />
+            <div>{status}</div>
+          </>
+        )
+      )}
+      {error && <div>{error}</div>}
     </div>
   );
 };
