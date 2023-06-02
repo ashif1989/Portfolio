@@ -6,9 +6,6 @@ const ExperienceDetails = () => {
   const { status, error, loading } = useFetch(
     "https://oltgg4-3000.csb.app/experienceDetails/" + id
   );
-  console.log("loading", loading);
-  console.log("error", error);
-  //console.log("details", details);
 
   return (
     <>

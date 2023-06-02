@@ -32,10 +32,10 @@ const Experience = () => {
 
   const { status, error, loading } = useFetch("https://randomuser.me/api/");
 
-  const handleDeleteItems = (id) => {
-    const newExp = experience.filter((exp) => exp.id !== id);
-    setExperience(newExp);
-  };
+  // const handleDeleteItems = (id) => {
+  //   const newExp = experience.filter((exp) => exp.id !== id);
+  //   setExperience(newExp);
+  // };
 
   return (
     <div>
@@ -47,7 +47,7 @@ const Experience = () => {
           <>
             <ListItems
               items={experience}
-              deleteItems={handleDeleteItems}
+              // deleteItems={handleDeleteItems}
               flag={"experience"}
             />
             <div>{status}</div>

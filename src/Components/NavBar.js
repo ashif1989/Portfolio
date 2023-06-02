@@ -17,6 +17,7 @@ const NavBar = () => {
         </Link>
         <Link to="/skills">Skills</Link>
         <Link to="/experience">Experience</Link>
+        <Link to="/addNewSkill">Add Skill</Link>
       </div>
     </div>
   );

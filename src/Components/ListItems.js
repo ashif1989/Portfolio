@@ -17,7 +17,7 @@ const ListItems = ({ items, deleteItems, flag }) => {
 
           <h4>{exp.info2}</h4>
           <h5>{exp.info3}</h5>
-          <button onClick={() => deleteItems(exp.id)}>Delete</button>
+          {/* <button onClick={() => deleteItems(exp.id)}>Delete</button> */}
         </div>
       ))}
     </div>
